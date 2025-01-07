@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /qwirkle/
+
+# If not a file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Forward API requests to the API directory
+RewriteRule ^api/(.*)$ api/$1 [QSA,L] 

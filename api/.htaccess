@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /qwirkle/api/
+
+# Αν δεν είναι αρχείο ή φάκελος
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Ανακατεύθυνση όλων των requests στο index.php
+RewriteRule ^(.*)$ index.php [QSA,L] 
